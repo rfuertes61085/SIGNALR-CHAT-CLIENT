@@ -5,6 +5,12 @@ import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
 import { SignalRNotificationService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+import { AuthModule } from './modules/auth/auth.module';
+
+// const routes: Routes = [
+//   { path: '', redirectTo: '/login', pathMatch: 'full' },
+// ];
 
 @NgModule({
   declarations: [
@@ -12,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
+    // RouterModule.forRoot(routes)
   ],
   providers: [AuthService, SignalRNotificationService],
   bootstrap: [AppComponent]
