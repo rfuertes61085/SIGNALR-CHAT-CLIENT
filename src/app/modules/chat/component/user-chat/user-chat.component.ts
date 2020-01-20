@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IChatMessage } from '../../chat.model';
 
 @Component({
   selector: 'app-user-chat',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class UserChatComponent implements OnInit {
   @Input()
-  public text: string;
+  public chat: IChatMessage;
   constructor() { }
 
   ngOnInit() { }

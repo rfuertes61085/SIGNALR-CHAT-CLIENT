@@ -1,3 +1,18 @@
 .reply-chat__container {
   text-align: left;
 }
+.reply-bubble {
+  background-color: #f8f8f8;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+}
+.date-time {
+  font-size: 10px;
+}
+.sender-name {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 600;
+}

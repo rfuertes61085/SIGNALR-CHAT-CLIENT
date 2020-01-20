@@ -1,3 +1,19 @@
 .user-chat__container {
   text-align: right;
 }
+.user-bubble {
+  background-color: #3578e5;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: fit-content;
+}
+.date-time {
+  font-size: 10px;
+}
+.sender-name {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: 600;
+}

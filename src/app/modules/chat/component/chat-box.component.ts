@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChatSrv } from 'src/app/chat.service';
 import { SignalRSrv } from 'src/app/signalr.service';
 import { IChatMessage } from '../chat.model';
+import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-chat-box',
   templateUrl: './chat-box.component.html',
@@ -15,10 +16,15 @@ export class ChatboxComponent implements OnInit {
 
   ngOnInit() {
     this.signalRSrv.initialize();
-    this.signalRSrv.Notification.subscribe(realTimeMessages => {
-      console.log(realTimeMessages);
-      this.chatMessages.push(realTimeMessages);
+    this.signalRSrv.Notification.subscribe(rtm => {
+      console.log(rtm);
+      if (rtm)
+        this.chatMessages.push(rtm);
     });
+
+    this.chatSrv.get('hub/messages')
+      .pipe(tap((msgs) => this.chatMessages.push(...msgs)))
+      .subscribe()
   }
 
   public onEnter(): void {

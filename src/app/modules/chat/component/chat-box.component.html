@@ -2,8 +2,8 @@
   <mat-card class="chat_container">
     <div class="inner-container" fxLayout="column" fxLayoutGap="20px">
       <ng-container *ngFor="let chat of chatMessages">
-        <app-user-chat *ngIf="isOwner(chat?.guid)" [text]="chat?.message"></app-user-chat>
-        <app-reply-chat *ngIf="!isOwner(chat?.guid)" [text]="chat?.message"></app-reply-chat>
+        <app-user-chat *ngIf="isOwner(chat?.guid)" [chat]="chat"></app-user-chat>
+        <app-reply-chat *ngIf="!isOwner(chat?.guid)" [chat]="chat"></app-reply-chat>
       </ng-container>
 
     </div>

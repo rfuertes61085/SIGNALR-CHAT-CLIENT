@@ -28,4 +28,8 @@ export abstract class BaseService<T> {
     return this.http.post<T>(this.baseUrl + url, object, { headers: this.commonHeaders() });
   }
 
+  public get(url?: string): Observable<T> {
+    return this.http.get<T>(this.baseUrl + url, { headers: this.commonHeaders() });
+  }
+
 }
