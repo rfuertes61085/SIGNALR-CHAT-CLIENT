@@ -1,0 +1,17 @@
+<div class="wrapper" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card class="chat_container">
+    <div class="inner-container" fxLayout="column" fxLayoutGap="20px">
+      <ng-container *ngFor="let chat of chatMessages">
+        <app-user-chat *ngIf="isOwner(chat?.guid)" [text]="chat?.message"></app-user-chat>
+        <app-reply-chat *ngIf="!isOwner(chat?.guid)" [text]="chat?.message"></app-reply-chat>
+      </ng-container>
+
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <mat-form-field fxFlex>
+        <input [(ngModel)]="input" matInput placeholder="Type here..">
+      </mat-form-field>
+      <div fxFlex="20"><button (click)="onEnter()" type="button" mat-raised-button color="primary">Send</button></div>
+    </div>
+  </mat-card>
+</div>

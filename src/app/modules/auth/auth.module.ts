@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/auth.service';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'auth',
     component: AuthContainerComponent
   }
 ];

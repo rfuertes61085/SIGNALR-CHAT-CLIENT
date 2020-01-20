@@ -5,7 +5,7 @@ import * as signalR from '@aspnet/signalr';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class SignalRNotificationService {
+export class SignalRSrv {
 
   private hubConnection: HubConnection | undefined;
   public Notification: EventEmitter<string> = new EventEmitter<string>();
