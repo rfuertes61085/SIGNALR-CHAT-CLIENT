@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BaseService } from './modules/base.service';
+import { IUserLogin } from './modules/auth/auth.model';
 
-@Injectable({providedIn: 'root'})
-export class AuthService {
-  constructor(   private http: HttpClient) { }
-
-  public getToken(): Observable<any> {
-    return this.http.get(``);
+@Injectable({ providedIn: 'root' })
+export class AuthService extends BaseService<any> {
+  constructor(public http: HttpClient) {
+    super(http);
   }
-  
+
 }

@@ -10,7 +10,7 @@ export class SignalRNotificationService {
   private hubConnection: HubConnection | undefined;
   public Notification: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private authService: AuthService) {
+  constructor() {
   }
 
   public initialize(): void {

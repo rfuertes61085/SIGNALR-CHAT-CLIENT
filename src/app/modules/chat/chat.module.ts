@@ -6,11 +6,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChatboxComponent } from './component/chat-box.component';
+import { AuthGuard } from 'src/app/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChatContainerComponent
+    component: ChatContainerComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

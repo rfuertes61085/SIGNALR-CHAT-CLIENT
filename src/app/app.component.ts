@@ -7,13 +7,13 @@ import { SignalRNotificationService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private signalRNotification: SignalRNotificationService) { }
+  constructor(private signalRSrv: SignalRNotificationService) { }
 
   public ngOnInit() {
-      this.signalRNotification.initialize();
-      this.signalRNotification.Notification.subscribe(data => {
-          // do some sort of notification!
-          console.log(data); // <-- This will be the message that has come from your NotificationHub!
-      });
+    this.signalRSrv.initialize();
+    this.signalRSrv.Notification.subscribe(data => {
+      // do some sort of notification!
+      console.log(data); // <-- This will be the message that has come from your NotificationHub!
+    });
   }
 }
