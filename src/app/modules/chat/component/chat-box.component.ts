@@ -17,7 +17,6 @@ export class ChatboxComponent implements OnInit {
   ngOnInit() {
     this.signalRSrv.initialize();
     this.signalRSrv.Notification.subscribe(rtm => {
-      console.log(rtm);
       if (rtm)
         this.chatMessages.push(rtm);
     });

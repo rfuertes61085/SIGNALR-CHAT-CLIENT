@@ -14,16 +14,15 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   constructor(private router: Router, private fb: FormBuilder, private authService: AuthService) {
     this.form = this.fb.group({
-      username: ['rey'],
-      password: ['p@ssword']
+      username: [''], //rey or john
+      password: [''] //p@ssword
     });
   }
 
   ngOnInit() { }
 
   public onSubmit(): void {
-    console.log(this.form.value as IUserLogin);
-    this.authService.post(this.form.value, 'auth/login')
+    this.authService.post(this.form.value as IUserLogin, 'auth/login')
       .pipe(tap((token => localStorage.setItem('token', JSON.stringify(token)))))
       .subscribe(res => {
         if(res)

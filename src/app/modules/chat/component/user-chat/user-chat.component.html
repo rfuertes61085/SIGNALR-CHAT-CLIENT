@@ -1,7 +1,7 @@
 <div class="user-chat__container">
   <div fxFlexOffset="50" fxFlex="50" fxLayoutAlign="end end">
-    <div class="user-bubble" fxLayout="column" fxLayoutAlign="start start">
-      <span class="sender-name">{{ chat?.senderName }}</span>
+    <div class="user-bubble" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+      <span class="sender-name">Me:</span>
       <span>{{ chat?.message }}</span>
       <span class="date-time">{{ chat?.sentAt | date: 'dd/MM/yyyy' }}</span>
     </div>
